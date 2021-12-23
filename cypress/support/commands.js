@@ -1,5 +1,4 @@
 Cypress.Commands.add('login', (email, password) => {
-    
     Cypress.log({
         name: 'Login'
     })
@@ -14,6 +13,5 @@ Cypress.Commands.add('login', (email, password) => {
         'headers': {
           'x-this-is-csrf': 'THIS IS SPARTA!'
         },
-
     })
 });     
