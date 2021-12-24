@@ -9,7 +9,7 @@ describe('auth',() => {
        .should('be.visible')
        .click();
     cy.get(".v-button__label").contains('Почта').click();
-    cy.fixture("login.json").then((user) => {
+    cy.fixture("login_details.json").then((user) => {
        cy.get("[type='email']").type(user.email);
        cy.get("[type='password']").type(user.password).type('{enter}');
     });
