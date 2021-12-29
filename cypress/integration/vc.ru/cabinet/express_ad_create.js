@@ -3,15 +3,11 @@ describe('express promo creating', () => {
       cy
           .login('a.kondratev@cmtt.ru', 'q')
           .visit('/u/927443-test-com/')
-          .get('.content-title').invoke('text').as('title')
-
-      })
+          .get('.content-title').invoke('text').as('title')          
+      });
       beforeEach(() => {
         Cypress.Cookies.preserveOnce('osnova-aid', 'osnova-remember')
-      })
-
-
-
+      });
     it('choose post and open constructor', () => {
       cy.get('.etc_control:first').click()
       cy.contains('Продвинуть').click()
@@ -26,11 +22,10 @@ describe('express promo creating', () => {
     })
 
     it('check preview in contractor form', () => {
-    cy.get('.bp-unit__link')
-      .should('have.attr', 'href')
+    //cy.get('.bp-unit bp-unit--entry > a').should('have.attr', 'href')
     //cy.get('.bp-unit-entry__subsite-avatar').should('be.visible')
     cy.get('.bp-unit-entry__subsite-name').should('have.text', '\n      Test Com\n    ')
-    cy.get('.bp-unit-entry__title').invoke('text').should('equal', '@title')
+    cy.get('.bp-unit-entry__title').invoke('text').should('equal','@title')
     })
 
     it('check hits form, submit button and redirect to cab', () => {

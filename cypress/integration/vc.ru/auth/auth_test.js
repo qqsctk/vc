@@ -15,9 +15,5 @@ describe('auth',() => {
     });
     cy.get(".navigation-user-profile__avatar-image")
       .should('be.exist'); 
-    cy.get("[type='email']").type('a.kondratev@cmtt.ru');
-    cy.get("[type='password']").type('q').type('{enter}');
-    cy.get(".navigation-user-profile__avatar-image")
-      .should('be.exist');
   });
 });

@@ -1,6 +1,6 @@
 Cypress.Commands.add('login', (email, password) => {
     Cypress.log({
-        name: 'Login'
+        name: 'login'
     })
     cy.request({
         'method':'POST',
@@ -15,3 +15,9 @@ Cypress.Commands.add('login', (email, password) => {
         },
     })
 });     
+
+Cypress.Commands.add('sendCookie', (email, password) => {
+    Cypress.Cookies.preserveOnce('osnova-aid', 'osnova-remember');
+});     
+
+import 'cypress-wait-until';
