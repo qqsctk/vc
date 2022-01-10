@@ -5,7 +5,7 @@ describe('editing and saving contacts', () => {
           .visit('cabinet/details')
     });      
     beforeEach(() => {
-        Cypress.Cookies.preserveOnce('osnova-aid', 'osnova-remember')
+        cy.sendCookie()
       });
     it('to copy ad', () => {
         cy.get('button').should('have.class', 'v-button v-button--blue v-button--size-default v-button--disabled')

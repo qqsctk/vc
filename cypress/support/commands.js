@@ -15,9 +15,29 @@ Cypress.Commands.add('login', (email, password) => {
         },
     })
 });     
-
-Cypress.Commands.add('sendCookie', (email, password) => {
+Cypress.Commands.add('sendCookie', () => {
     Cypress.Cookies.preserveOnce('osnova-aid', 'osnova-remember');
-});     
-
+});  
+Cypress.Commands.add('zip', () => {
+    cy.get('.v-etc__button:first')
+      .click()
+      .get('.popover-item__label').contains('Архивировать')
+      .click();
+});
+Cypress.Commands.add('unzip', () => {
+    cy.get('.v-etc__button:first')
+      .click()
+      .get('.popover-item__label').contains('Разархивировать')
+      .click();
+});
+Cypress.Commands.add('clearNotifications', () => {
+    cy.get('.head-notifies__badge:last').dblclick({force:true})
+});
+Cypress.Commands.add('checkNotifBadge', () => {
+    cy.get('.head-notifies__toggler:last')
+          .find('span')
+          .invoke('text').then((text)=> {
+          expect(text.trim()).equal('1')
+        })
+});        
 import 'cypress-wait-until';
