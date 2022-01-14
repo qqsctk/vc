@@ -9,7 +9,7 @@ describe('to archive ad', () => {
 
     it('send an ad to the archive', () => {
         cy
-            .visit('/cabinet/services')
+            .visitCabinet()
             .get('.cs-list .cs-list-item .cs-list-item__title').contains('test')
             .closest('.cs-list-item__title')
             .zip() 
@@ -23,7 +23,7 @@ describe('to archive ad', () => {
     });
     it('remove an ad from the archive', () => {
         cy
-            .visit('/cabinet/archive')    
+            .visitCabinet()  
             .get('.cs-list .cs-list-item .cs-list-item__title').contains('test')
             .closest('.cs-list-item__title')
             .unzip() 

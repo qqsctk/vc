@@ -1,4 +1,6 @@
 {
-    "details": "base",
-    "profile": "q"
+    "cabinet": "cabinet/services",
+    "vacancies": "job",
+    "events": "events",
+    "postExpressAd": "u/927443-test-com/319516-test"
 }
