@@ -2,12 +2,12 @@ describe('editing and saving contacts', () => {
     before(() => {
       cy
           .login('a.kondratev@cmtt.ru', 'q')
-          .visit('cabinet/details')
+          .visitCabinet()
     });      
     beforeEach(() => {
         cy.sendCookie()
       });
-    it('to copy ad', () => {
+    it('to change email and save', () => {
         cy.get('button').should('have.class', 'v-button v-button--blue v-button--size-default v-button--disabled')
         cy.get('input[type=email]')
           .invoke('val')
